@@ -48,8 +48,9 @@ public class Base {
 		
 		capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		    
+	    
 		    return driver;
 		}
 		

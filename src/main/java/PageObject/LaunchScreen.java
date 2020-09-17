@@ -1,4 +1,4 @@
-package PageObject;
+package pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,6 +17,8 @@ public class LaunchScreen {
 
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/sign_in_button")
 	public WebElement signInButton;
+	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/skip_sign_in_button")
+	public WebElement skipSignIn;
 
 	
 	

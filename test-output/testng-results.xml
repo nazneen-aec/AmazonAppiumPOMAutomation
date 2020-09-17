@@ -2,18 +2,60 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="52" started-at="2020-08-29T17:02:47 IST" finished-at="2020-08-29T17:02:47 IST">
+  <suite name="Default suite" duration-ms="24421" started-at="2020-09-10T16:10:48 IST" finished-at="2020-09-10T16:11:13 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="52" started-at="2020-08-29T17:02:47 IST" finished-at="2020-08-29T17:02:47 IST">
-      <class name="TestScript.LoginTestScript">
-        <test-method status="FAIL" signature="totalValidation()[pri:0, instance:TestScript.LoginTestScript@6a1aab78]" name="totalValidation" duration-ms="8" started-at="2020-08-29T17:02:47 IST" finished-at="2020-08-29T17:02:47 IST">
-          <exception class="java.lang.NullPointerException">
+    <test name="Default test" duration-ms="24421" started-at="2020-09-10T16:10:48 IST" finished-at="2020-09-10T16:11:13 IST">
+      <class name="TestScript.TestScript">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestScript.TestScript@69b0fd6f]" name="setUp" is-config="true" duration-ms="15379" started-at="2020-09-10T16:10:48 IST" finished-at="2020-09-10T16:11:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="testExecution()[pri:0, instance:TestScript.TestScript@69b0fd6f]" name="testExecution" duration-ms="8954" started-at="2020-09-10T16:11:04 IST" finished-at="2020-09-10T16:11:13 IST">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-0NV2K68R', ip: '192.168.155.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: C:\Users\ce\eclipse-workspa..., appPackage: com.amazon.mShop.android.sh..., automationName: UiAutomator2, databaseEnabled: false, desired: {app: C:\Users\ce\eclipse-workspa..., automationName: UiAutomator2, newCommandTimeout: 20, platformName: android}, deviceApiLevel: 29, deviceManufacturer: samsung, deviceModel: SM-A105F, deviceName: RZ8M31MWT9A, deviceScreenDensity: 280, deviceScreenSize: 720x1520, deviceUDID: RZ8M31MWT9A, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 20, pixelRatio: 1.75, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 54, takesScreenshot: true, viewportRect: {height: 1328, left: 0, top: 54, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8a2bf143-d15e-4b1e-b1e9-c5632a4b68d6]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at java.io.File.<init>(File.java:360)
-at Pages.Base.capabilities(Base.java:33)
-at TestScript.LoginTestScript.totalValidation(LoginTestScript.java:25)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-0NV2K68R', ip: '192.168.155.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: C:\Users\ce\eclipse-workspa..., appPackage: com.amazon.mShop.android.sh..., automationName: UiAutomator2, databaseEnabled: false, desired: {app: C:\Users\ce\eclipse-workspa..., automationName: UiAutomator2, newCommandTimeout: 20, platformName: android}, deviceApiLevel: 29, deviceManufacturer: samsung, deviceModel: SM-A105F, deviceName: RZ8M31MWT9A, deviceScreenDensity: 280, deviceScreenSize: 720x1520, deviceUDID: RZ8M31MWT9A, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 20, pixelRatio: 1.75, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 54, takesScreenshot: true, viewportRect: {height: 1328, left: 0, top: 54, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 8a2bf143-d15e-4b1e-b1e9-c5632a4b68d6
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
+at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(<generated>)
+at TestScript.TestScript.testExecution(TestScript.java:62)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -44,11 +86,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- totalValidation -->
-      </class> <!-- TestScript.LoginTestScript -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- testExecution -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestScript.TestScript@69b0fd6f]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-09-10T16:11:13 IST" finished-at="2020-09-10T16:11:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestScript.TestScript -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -1,4 +1,4 @@
-package PageObject;
+package pageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;

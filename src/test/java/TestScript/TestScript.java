@@ -4,6 +4,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 //import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -17,18 +20,21 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-import PageObject.HomePage;
-import PageObject.LaunchScreen;
-import PageObject.LoginPage;
-import PageObject.SearchPage;
-
-import Utilities.Log;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.AndroidKeyCode;
+import pageObject.HomePage;
+import pageObject.LaunchScreen;
+import pageObject.LoginPage;
+import pageObject.MobileActions;
+import pageObject.ProductListing;
+import pageObject.ProductPage;
+import pageObject.SearchPage;
 import settings.Base;
 //import pageObjects.FormPage;
+import utilities.Log;
 
 public class TestScript extends Base {
 
@@ -43,48 +49,75 @@ public class TestScript extends Base {
 	@Test
 	public void testExecution() throws IOException, InterruptedException {
 
-		// System.out.println(prop.getProperty("username"));
-		// System.out.println(prop.getProperty("password"));
-		// Log.class()
 		LaunchScreen launching = new LaunchScreen(driver);
 		launching.signInButton.click();
 		Thread.sleep(3000);
 
 		// Log.startLog(SearchPage:"test is started" );
 
+		/***********************************************************************************
+		 * Login Page
+		 **********************************************************************************/
 		LoginPage login = new LoginPage(driver);
-		// login.getText();
-		// Log.startLog(testClassName);
-		// driver.findElement(By.xpath(
-		// "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View/android.view.View[3]/android.widget.EditText"))
-		// .sendKeys("username");
-		// HomePage home = new HomePage(driver);
-		// login.signInButton.click();
-		// login.getuserName();
 		login.userName.sendKeys(prop.getProperty("username"));
-		// login.userName.sendKeys("9330024800");
-		Thread.sleep(3000);
 		login.continueButton.click();
 		login.password.sendKeys(prop.getProperty("password"));
-		// login.password.sendKeys("admin#123");
-		Thread.sleep(3000);
 		login.loginButton.click();
-		Thread.sleep(3000);
+		Log.startLog(".............Hello Log testinghello");
 
-		/**** On search Page *****/
+		/***********************************************************************************
+		 * search Page
+		 **********************************************************************************/
+
 		SearchPage productSearch = new SearchPage(driver);
+		productSearch.tapOnSearch.click();
 
-		/**** Search product given from user input *****/
+		/**** Search product item taken from properties file *****/
+
 		productSearch.tapOnSearch.sendKeys(prop.getProperty("searchItem"));
 
-		/**** Tap on Auto Suggestion List *****/
+		Log.startLog(".............cfgdgdfgdfo");
 
-		// productSearch.autoSugg.click();
+		/*****************************************************************
+		 * 1. SearchProduct method called 2. in the parameter userSuggItem from
+		 * properties file called
+		 ******************************************************************/
 
-		productSearch.getautoSugg();
+		productSearch.SearchProduct(prop.getProperty("userSuggItem"));
 
-		// TouchAction action = new TouchAction(driver).tap(x+60, y+260).release();
-		// action.perform();
+		// assertTrue("autoSuggList".equalsIgnoreCase("userSuggestedItem"));
+
+		/**** Search product based on Index *****/
+
+		System.out.println("Search by Index......." + productSearch.searchByIndex.get(3).getText());
+		productSearch.searchByIndex.get(2).click();
+
+		/***********************************************************************************
+		 * Product Listing page
+		 **********************************************************************************/
+
+		/**** Scroll on the product *****/
+		//String text="Philips 164 cm (65 inches) 6700 Series 4K Ambilight LED";
+		// String ProdScroll="Philips 164 cm (65 inches) 6700 Series 4K Ambilight LED
+		// Smart TV 65PUT6703S/94 (Dark Sliver)";
+		//String ProdScroll = prop.getProperty("scrollOnProd");
+		//System.out.println("Get property value for Scroll on Elmenet...." + ProdScroll);
+		MobileActions s = new MobileActions(driver);
+		//String text = prop.getProperty("scrollOnProd");
+		//String text="Philips 164 cm (65 inches) 6700 Series 4K Ambilight LED";
+		//String text="abc";
+		
+		s.scrollToText("Philips 164 cm (65 inches) 6700 Series 4K Ambilight LED");
+		
+		
+		
+		//((WebElement) ScrollToClick).click();
+		/**** Ignore Select location pop up *****/
+		ProductListing touchOutside = new ProductListing(driver);
+		touchOutside.selectLocationId();
+		
+		
+
 
 	}
 
